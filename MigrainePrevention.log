@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  19 JUN 2019 02:01
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  19 JUN 2019 02:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1315,28 +1315,46 @@ in converting enzyme inhibitor)나
 Chapter 4.
 File: static/SearchProcess.png Graphic file (type bmp)
 <static/SearchProcess.png>
-No file MigrainePrevention.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
 [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
+Underfull \hbox (badness 3503) in paragraph at lines 482--483
+[]\TU/NanumGothic(0)/m/sl/10 Episodic migraine환자에서 예방치료로 안지오텐신전환효소억제제(angiotens
+in converting enzyme inhibitor)나
+ []
+
+[12]
+Chapter 5.
+[13
+
+] [14
+
+]
+Chapter 6.
+[15] [16
+
+]
+Chapter 7.
+No file MigrainePrevention.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 519.
+[17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 519.
 (./MigrainePrevention.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 416.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 416.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 519.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 519.
 Package rerunfilecheck Info: File `MigrainePrevention.out' has not changed.
-(rerunfilecheck)             Checksum: 43072D4FCB5F96014E9382D2CCD57AEC.
+(rerunfilecheck)             Checksum: 0E32DC69926DF8621D77F821FF648579.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23984 strings out of 492909
- 448215 string characters out of 6132923
- 568838 words of memory out of 5000000
- 27818 multiletter control sequences out of 15000+600000
+ 23991 strings out of 492909
+ 448298 string characters out of 6132923
+ 569447 words of memory out of 5000000
+ 27825 multiletter control sequences out of 15000+600000
  545097 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  47i,4n,116p,815b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MigrainePrevention.pdf (11 pages).
+Output written on MigrainePrevention.pdf (17 pages).
