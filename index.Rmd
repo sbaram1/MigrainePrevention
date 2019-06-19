@@ -1,8 +1,9 @@
 --- 
-title: "삽화성편두통 예방 진료지침"
+title: "삽화편두통 예방치료약물 진료지침"
 author: "대한두통학회 편두통진료지침위원회"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output: bookdown::word_document2
 # output: bookdown::gitbook
 mainfont: NanumGothic
 documentclass: book
@@ -10,7 +11,18 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "Migraine prevention"
 ---
 
-<!-- # Prerequisites {-} -->
+\frontmatter
+
+# 머리말 {-}
+
+# 발간사 {-}
+
+김병건 회장님
+
+# 간행사 {-}
+
+정재면 위원장님
+
