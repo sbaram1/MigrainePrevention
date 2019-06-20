@@ -1,6 +1,6 @@
-# 개발 계획
+# 개발 진행 과정 
 
-## 기존 진료지침 검색
+## 기존 진료지침 검색  {-}
 
 - Selection criteria
 
@@ -32,9 +32,33 @@
 
     – Practice guideline update summary fot Botulinum neurotoxin (AAN) 2016 neurology (이미지)
 
-## 개발방법
+## 개발방법  {-}
 - Adaptation
 
     - 2012년까지의 진료지침 + 2012년 이후 논문은 핵심질문별로 다시 검색 
   
     - 그외 수기로 논문 추가 조사 (논문의 참고문헌등)
+
+## 지침및 근거검색  {-}
+
+![](static/SearchProcess.png)
+
+- 지침검색 
+
+    - National guideline clearinghouse 
+    - Guideline international network 
+    - Pubmed
+    - Google search
+    - KoMGI
+    - KoreaMed - KMBASE
+
+- 근거검색
+
+    - 전자문헌검색: 상기 + Ovid DB(MEDLINE/EMBASE) Cochrane library
+    - 수기검색 (gray literature)
+
+## 지침 작성  {-}
+
+## 외부 전문가 리뷰  {-}
+
+## 지침 수정계획과 발표   {-}
