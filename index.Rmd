@@ -14,6 +14,10 @@ github-repo: rstudio/bookdown-demo
 description: "Migraine prevention"
 ---
 
+```{r include=FALSE}
+library(tidyverse)
+```
+
 \frontmatter
 
 # 머리말 {-}
