@@ -2,7 +2,7 @@
 
 ### Korean Version of The International Classification of Headache Disorders, 3rd Edition {-}
 
-## 무조짐 편두통
+## 무조짐 편두통 {-}
 
 A. 진단기준 B-D를 충족하는 발작이 최소한 5번
 
@@ -22,7 +22,7 @@ D. 두통이 있는 동안 다음 중 최소한 한 가지:
     
 E. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
 
-## 조짐 편두통
+## 조짐 편두통 {-}
 
 A. 진단기준 B와 C를 충족하며 최소한 2번 발생하는 발작 
 
