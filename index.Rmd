@@ -24,8 +24,6 @@ library(tidyverse)
 
 # 머리말 {-}
 
-This is preface.
-
 # 발간사 {-}
 
 **삽화편두통 예방치료약물”에 대한 임상진료지침 발간을 축하하며**
