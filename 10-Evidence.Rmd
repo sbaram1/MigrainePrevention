@@ -6,11 +6,11 @@
   + 그외 수기로 논문 추가 조사 (논문의 참고문헌등)
     
 ## 지침및 근거검색  
-<!-- ![](static/SearchProcess.png) -->
+![](static/SearchProcess.png)
 
-<div style="text-align:center" markdown="l">
-<img src="static/SearchProcess.png" alt="Drawing" style="width: 400px;"/>
-</div>
+<!-- <div style="text-align:center" markdown="l"> -->
+<!-- <img src="static/SearchProcess.png" alt="Drawing" style="width: 400px;"/> -->
+<!-- </div> -->
 
 - 진료지침검색 
   + 정보원
