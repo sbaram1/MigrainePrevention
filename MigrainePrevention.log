@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  27 JUN 2019 13:07
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  27 JUN 2019 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1794,27 +1794,31 @@ Overfull \hbox (12.59904pt too wide) in paragraph at lines 1472--1473
 []\TU/NanumGothic(0)/m/sl/10 진료지침만으로 핵심질문을 답하는데 충분하지 않으면 체계적 문헌고찰, 무작위비교임상시험,
  []
 
+[41] [42
+
+]
+Appendix G.
 No file MigrainePrevention.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1544.
-[41]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1544.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1555.
+[43]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1555.
 (./MigrainePrevention.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1544.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1544.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1555.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1555.
 
 Package rerunfilecheck Info: File `MigrainePrevention.out' has not changed.
-(rerunfilecheck)             Checksum: 9E79CD2A9A269F5AC9631DC51487B09A.
+(rerunfilecheck)             Checksum: 009ACECF97BBB708BB98182B4BE45F05.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 23636 strings out of 492909
- 443215 string characters out of 6132923
- 566494 words of memory out of 5000000
- 27468 multiletter control sequences out of 15000+600000
+ 23638 strings out of 492909
+ 443239 string characters out of 6132923
+ 566634 words of memory out of 5000000
+ 27470 multiletter control sequences out of 15000+600000
  553148 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  47i,8n,116p,1128b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MigrainePrevention.pdf (51 pages).
+Output written on MigrainePrevention.pdf (53 pages).
