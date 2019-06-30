@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  29 JUN 2019 14:03
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  29 JUN 2019 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1352,20 +1352,20 @@ Underfull \hbox (badness 1365) in paragraph at lines 242--243
  []
 
 [2]
-Underfull \hbox (badness 2626) in paragraph at lines 262--263
+Underfull \hbox (badness 1418) in paragraph at lines 261--262
+[]\TU/NanumGothic(0)/m/sl/10 플루나리진은 파킨슨 증상이나 떨림 등의 질환이 있는 환자에서는 금기이며
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 266--267
 []\TU/NanumGothic(0)/m/sl/10 5. 성인 삽화편두통 환자에서 예방치료로 안지오텐신수용체차단제(angiotensin rec
 ep-
  []
 
 
-Underfull \hbox (badness 2894) in paragraph at lines 262--263
+Underfull \hbox (badness 2894) in paragraph at lines 266--267
 \TU/NanumGothic(0)/m/sl/10 tor blocker)나 안지오텐신전환효소억제제(angiotensin-converting en
 zyme inhibitor)를
- []
-
-
-Underfull \hbox (badness 1418) in paragraph at lines 289--290
-[]\TU/NanumGothic(0)/m/sl/10 플루나리진은 파킨슨 증상이나 떨림 등의 질환이 있는 환자에서는 금기이며
  []
 
 
