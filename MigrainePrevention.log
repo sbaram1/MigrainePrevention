@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  2 JUL 2019 09:02
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  2 JUL 2019 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,13 +1244,23 @@ Underfull \hbox (badness 1117) in paragraph at lines 124--125
 ] [2
 
 ]
-Underfull \hbox (badness 1983) in paragraph at lines 138--139
-\TU/NanumGothic(0)/m/sl/10 않으려는 노력의 산물이었습니다. 2000년대 중반이 되면서 진료지침의 개발과 검증에
+Underfull \hbox (badness 4416) in paragraph at lines 138--139
+\TU/NanumGothic(0)/m/sl/10 한국보건의료원(NECA)의 개원과 함께 대한의학회 주관으로 진료지침 개발의 표준화가
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 138--139
-\TU/NanumGothic(0)/m/sl/10 대한 방법론적인 발전으로 국내에서도 한국보건의료원(NECA)의 개원과 함께 대한의학회
+Underfull \hbox (badness 1303) in paragraph at lines 138--139
+\TU/NanumGothic(0)/m/sl/10 2016년 가을 이번 진료지침의 개시모임이 있은 이후 대한의학회에서 권고하는 방법론을
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 138--139
+\TU/NanumGothic(0)/m/sl/10 준수하여 진료지침 개발과정이 시작되었습니다. 간사인 박광열 교수를 포함한 진료지침
+ []
+
+
+Underfull \hbox (badness 2644) in paragraph at lines 138--139
+\TU/NanumGothic(0)/m/sl/10 위원들이 새로운 방법론에 대한 지식과 경험을 쌓아나가며 느리지만 한 단계씩 개발을
  []
 
 
