@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  2 JUL 2019 21:55
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.6.12)  16 JUL 2019 01:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1719,11 +1719,12 @@ Underfull \hbox (badness 1132) in paragraph at lines 866--867
 \TU/NanumGothic(0)/m/sl/10 본인의 두통 패턴을 파악하고 유발인자를 회피하도록 돕는 교육적 효과도 있다. 따라서
  []
 
-File: static/DiaryExample.png Graphic file (type bmp)
-<static/DiaryExample.png>
 [25
 
-] [26]
+]
+File: static/DiaryExample.png Graphic file (type bmp)
+<static/DiaryExample.png>
+[26]
 Appendix B.
 
 Overfull \hbox (49.87329pt too wide) in alignment at lines 899--925
