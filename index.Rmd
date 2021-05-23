@@ -1,5 +1,5 @@
 --- 
-title: "삽화편두통 예방치료약물 진료지침"
+title: "편두통 예방치료약물 진료지침"
 author: "대한두통학회 편두통진료지침위원회"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

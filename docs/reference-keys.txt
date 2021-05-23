@@ -1,8 +1,3 @@
-tab:unnamed-chunk-2
-tab:unnamed-chunk-3
-tab:unnamed-chunk-4
-tab:unnamed-chunk-5
-tab:unnamed-chunk-6
 요약
 핵심질문과-권고사항
 약물별-권고수준
