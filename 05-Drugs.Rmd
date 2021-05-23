@@ -2,9 +2,13 @@
 # 삽화편두통 예방약물의 용량, 부작용 및 금기사항 <span style="color:blue;"> (Under Revision) </span>
 
 ## 일반적인 용량 및 흔한 부작용 
-```{r echo=FALSE}
+
+```{r include=FALSE}
 library(magrittr)
 library(dplyr)
+```
+
+```{r echo=FALSE}
 
 db1 <- data.frame(약물 = c("베타차단제", "프로프라놀롤", "메토프롤롤",  "아테놀롤", 
                         "나돌롤", "네비볼롤", "비소프롤롤", "핀돌롤"),
