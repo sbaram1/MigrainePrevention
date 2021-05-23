@@ -1,8 +1,8 @@
-# 개발의 엄격성
+# 개발의 엄격성 <span style="color:blue;"> (revised 20210523) </span>
 
 ## 개발방법
 - **Adaptation**
-  + 2012 - 2017년까지의 진료지침 + 2012-2017년 사이 연구를 핵심질문별로 다시 검색
+  + 2012 - 2020년까지의 진료지침 + 1946-2020년 사이 연구를 핵심질문별로 다시 검색
   + 그외 수기로 논문 추가 조사 (논문의 참고문헌등)
     
 ## 지침및 근거검색  
@@ -42,12 +42,20 @@
 
 - 근거검색
   + 검색원 
-    - 전자문헌검색: 상기 + Ovid DB(MEDLINE/EMBASE) Cochrane library
+    - 전자문헌검색: 상기
+    - Ovid DB(MEDLINE/EMBASE)
+    - Cochrane library
+    - KoreaMed
     - 수기검색 (gray literature)
     
-- 검색 결과
-  + [최신성 검색](static/SearchingResult_ 201710.pdf): online only material
-    - 2012-2017년 10월까지 검색어, 검색결과 
+- 검색 결과 <span style="color:blue;"> 문헌선택 부분 수정 필요 </span>
+  + [최신성 검색1](static/SearchResult1.pdf): online only material
+  + [최신성 검색2](static/SearchResult2.pdf): online only material
+    - 2012-2020년 6월까지 검색어, 검색결과 
+
+  + [문헌 선택1](static/Selection1.pdf): online only material
+  + [문헌 선택2](static/Selection2.pdf): online only material
+  
 
 ## 검색된 진료지침및 연구결과 선별
 - 선정 기준
@@ -62,17 +70,19 @@
 - 진료지침만으로 핵심질문을 답하는데 충분하지 않으면 체계적 문헌고찰, 무작위비교임상시험, 관찰연구등 순으로 추가 자료에 대해 질평가를 시행하고 근거표를 작성하였음.
 
 ## 권고문 합의및 권고등급 결정
-### 근거수준과 권고등급의 평가: GRADE 방식 사용 {-}
+### 근거수준과 권고등급의 평가: AHA 와 GRADE 방식 사용 {-}
 #### 근거수준 {-}
-근거수준(level of evidence)는 현재까지의 근거를 바탕으로 특정 중재의 효과에 대해 확신하는 정도를 말한다. 
+<!-- AHA 활용 -->
 
-본 지침에서는 GRADE방식을 수정차용하여 아래와 같이 평가하였다.
+근거수준(level of evidence, LOE)는 현재까지의 근거를 바탕으로 특정 중재의 효과에 대해 확신하는 정도를 말한다. 
 
-- **높음**: 추정된 효과가 실제효과와 비슷할 것이라고 매우 확신한다.
-- **보통**: 추정된 효과가 실제 효과와 근접할 것이라고 확인한다. 하지만 상당히 다를 수 있는 가능성도 있다.
-- **낮음**: 추정된 효과는 실제효과와 아마도 상당히 다를지 모른다.
-- **매우 낮음**: 추정된 효과는 실제효과에 상당히 다를 가능성이 있다.
-- **전문가 의견**: 기존 근거가 별로 없으나 본 위원회 전문가의 공식적 합의 절차를 거쳐 현재 수준에서 임상적 적용을 하기에 적절함.
+본 지침에서는 AHA 방식을 수정차용하여 아래와 같이 평가하였다 ([LOE](static/20210523_LOE_AHA.pdf).
+
+- **LOE I**: Evidence obtained from meta-analysis  or at least one RCT of randomized controlled trials
+- **LOE II**: Evidence obtained from at least one well-designed controlled study without randomization, or t least one other type of well-designed quasi-experimental study
+- **LOE III**: Evidence obtained from well-designed non-experimental descriptive studies, such as comparative studies, correlation studies and case studies
+- **LOE IV**: Evidence obtained from expert committee reports or opinions and/or clinical experiences of respected authorities
+
 
 
 #### 권고등급 {-}

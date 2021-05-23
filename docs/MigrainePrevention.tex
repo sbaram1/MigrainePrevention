@@ -1,38 +1,59 @@
-\documentclass[]{book}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
+\usepackage{amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-    \setmainfont[]{NanumGothic}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{NanumGothic}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdftitle={삽화편두통 예방치료약물 진료지침},
-            pdfauthor={대한두통학회 편두통진료지침위원회},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{apalike}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={삽화편두통 예방치료약물 진료지침},
+  pdfauthor={대한두통학회 편두통진료지침위원회},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -41,52 +62,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{삽화편두통 예방치료약물 진료지침}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{대한두통학회 편두통진료지침위원회}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{2019-07-16}
-
 \usepackage{booktabs}
 \usepackage{amsthm}
 
@@ -101,6 +84,15 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{삽화편두통 예방치료약물 진료지침}
+\author{대한두통학회 편두통진료지침위원회}
+\date{2021-05-23}
 
 \begin{document}
 \maketitle
@@ -111,8 +103,8 @@
 }
 \frontmatter
 
-\hypertarget{section}{%
-\chapter*{발간사}\label{section}}
+\hypertarget{uxbc1cuxac04uxc0ac}{%
+\chapter*{발간사}\label{uxbc1cuxac04uxc0ac}}
 \addcontentsline{toc}{chapter}{발간사}
 
 \textbf{삽화편두통 예방치료약물''에 대한 임상진료지침 발간을 축하하며}
@@ -127,8 +119,8 @@
 
 \textbf{대한두통학회 회장 김병건}
 
-\hypertarget{section-1}{%
-\chapter*{간행사}\label{section-1}}
+\hypertarget{uxac04uxd589uxc0ac}{%
+\chapter*{간행사}\label{uxac04uxd589uxc0ac}}
 \addcontentsline{toc}{chapter}{간행사}
 
 대한두통학회 창립 20주년을 맞이하여 삽화편두통 예방치료약물 진료지침이 발간됩니다.
@@ -145,11 +137,11 @@
 
 \mainmatter
 
-\hypertarget{section-2}{%
-\chapter{요약}\label{section-2}}
+\hypertarget{uxc694uxc57d}{%
+\chapter{요약}\label{uxc694uxc57d}}
 
-\hypertarget{section-3}{%
-\section{핵심질문과 권고사항}\label{section-3}}
+\hypertarget{uxd575uxc2ecuxc9c8uxbb38uxacfc-uxad8cuxace0uxc0acuxd56d}{%
+\section{핵심질문과 권고사항}\label{uxd575uxc2ecuxc9c8uxbb38uxacfc-uxad8cuxace0uxc0acuxd56d}}
 
 1. 성인 삽화편두통 환자에서 예방치료를 고려해야 하는 요인들(두통빈도, 두통강도, 환자의 선호도, 일상생활에 대한 영향 등)은 무엇인가?
 
@@ -195,7 +187,7 @@
   편두통환자가 편두통 급성기치료의 의학적 금기를 가지고 있는 경우에 예방치료를 고려할 수 있다. (근거수준: 전문가의견, 권고등급: 약함)
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 2. 성인 삽화편두통 환자에서 예방치료의 중단은 어떻게 결정해야 하는가?
 
@@ -210,7 +202,7 @@
   예방치료의 효능, 부작용 및 순응도를 평가하고 유지기간을 결정하기 위해서는 두통일기 작성을 권고한다. (근거수준: 전문가의견, 권고등급: 강함)
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 3. 성인 삽화편두통 환자에서 예방치료로 베타차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 
@@ -235,7 +227,7 @@
 프로프라놀롤과 나돌롤은 편두통예방치료제로 보험급여 인정기준에 포함되어 있으나 그외 베타차단제는 현재 편두통 보험급여 인정기준에 포함되어 있지 않다.
 \end{quote}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 4. 성인 삽화편두통 환자에서 예방치료로 칼슘통로차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 
@@ -254,7 +246,7 @@
 플루나리진은 파킨슨 증상이나 떨림 등의 질환이 있는 환자에서는 금기이며 고령환자에서는 가급적 투여를 피해야 한다.
 \end{quote}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 5. 성인 삽화편두통 환자에서 예방치료로 안지오텐신수용체차단제(angiotensin receptor blocker)나 안지오텐신전환효소억제제(angiotensin-converting enzyme inhibitor)를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 
@@ -267,7 +259,7 @@
   텔미사르탄은 성인 삽화편두통 환자에서 편두통 예방약제로 사용하지 않을 것을 권고한다. (근거수준: 낮음, 권고등급: 강함).
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 6. 성인 삽화편두통 환자에서 예방치료로 항우울제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 
@@ -282,7 +274,7 @@
   노르트리프틸린은 성인 삽화편두통 환자에서 편두통 예방치료제로 사용하는 것을 고려할 수 있다. (근거수준: 매우낮음, 권고등급: 약함)
 \end{itemize}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 7. 성인 삽화편두통 환자에서 예방치료로 뇌전증약을 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 
@@ -307,10 +299,10 @@
 토피라메이트와 디발프로엑스나트륨은 편두통예방치료제로 보험급여 인정기준에 포함되어 있으나 발프로산, 가바펜틴, 레베티라세탐, 조니사미드는 현재 편두통 보험급여 인정기준에 포함되어 있지 않다.
 \end{quote}
 
-\hypertarget{section-4}{%
-\section{약물별 권고수준}\label{section-4}}
+\hypertarget{uxc57duxbb3cuxbcc4-uxad8cuxace0uxc218uxc900}{%
+\section{약물별 권고수준}\label{uxc57duxbb3cuxbcc4-uxad8cuxace0uxc218uxc900}}
 
-\begin{longtable}{lccclccclccclccc}
+\begin{longtable}[t]{lccc}
 \caption{\label{tab:unnamed-chunk-2}베타차단제}\\
 \toprule
 약물 & 근거수준 & 권고등급 & 권고사항\\
@@ -326,7 +318,7 @@
 \bottomrule
 \end{longtable}
 
-\begin{longtable}{lccclccclccclccc}
+\begin{longtable}[t]{lccc}
 \caption{\label{tab:unnamed-chunk-3}칼슘통로차단제}\\
 \toprule
 약물 & 근거수준 & 권고등급 & 권고사항\\
@@ -341,7 +333,7 @@
 \bottomrule
 \end{longtable}
 
-\begin{longtable}{lccclccclccclccc}
+\begin{longtable}[t]{lccc}
 \caption{\label{tab:unnamed-chunk-4}안지오텐신수용체 또는 전환효소억제제}\\
 \toprule
 약물 & 근거수준 & 권고등급 & 권고사항\\
@@ -352,7 +344,7 @@
 \bottomrule
 \end{longtable}
 
-\begin{longtable}{lccclccclccclccc}
+\begin{longtable}[t]{lccc}
 \caption{\label{tab:unnamed-chunk-5}항우울제}\\
 \toprule
 약물 & 근거수준 & 권고등급 & 권고사항\\
@@ -364,7 +356,7 @@
 \bottomrule
 \end{longtable}
 
-\begin{longtable}{lccclccclccclccc}
+\begin{longtable}[t]{lccc}
 \caption{\label{tab:unnamed-chunk-6}뇌전증약}\\
 \toprule
 약물 & 근거수준 & 권고등급 & 권고사항\\
@@ -379,8 +371,8 @@
 \bottomrule
 \end{longtable}
 
-\hypertarget{section-5}{%
-\chapter{개요}\label{section-5}}
+\hypertarget{uxac1cuxc694}{%
+\chapter{개요}\label{uxac1cuxc694}}
 
 두통은 신경과 외래진료를 보게 되는 가장 흔한 증상으로, 평생 동안 전 인구의 70\% 이상이 두통을 경험하는 것으로 알려져 있다. 병원에 내원하는 두통환자에서 가장 흔한 원인은 편두통이며, 전 세계적 유병률은 10\% 내외로 추산되고 국내연구(Korean Headache Survey)에서 편두통 유병률은 6\% (남자 3\%, 여자 9\%)였다.
 
@@ -392,14 +384,14 @@
 
 국제두통질환분류에서 편두통은 다양한 아형으로 정의될 수 있으며, 조짐여부에 따라 무조짐편두통과 조짐편두통으로 크게 구분하고 있다. 또한, 두통빈도에 따라 두통일수가 한 달에15일 이상이면서 그 기간이 3개월을 초과하는 경우에 만성편두통으로, 그 이하인 경우 삽화편두통으로 진단 분류된다. 삽화편두통 환자 중 일부는 만성편두통으로 진행되거나 삽화편두통 상태에서도 두통빈도의 악화 또는 급성기치료의 효율저하로 인하여 편두통으로 인한 일상생활의 장애(migraine-related disability)를 경험할 수 있다. 따라서, 삽화편두통 환자의 편두통 장애룰 감소시키기 위한 적절한 편두통예방치료의 전략이 필요하며, 임상현장에서는 이를 위해 참고할 편두통예방치료 진료지침이 필요하다. 삽화편두통의 경우 기존의 다양한 경구약물을 바탕으로 한 편두통예방치료의 근거와 국외진료지침이 있다. 따라서 본 진료지침에서는 기존 및 최신의 근거를 체계적으로 고찰하여, 국내의 일차진료를 담당하는 의사가 성인 삽화편두통 환자를 진료하는 외래 및 입원 진료에서 활용할 수 있는 편두통 예방치료약물 사용의 권고안을 제시하려고 한다.
 
-\hypertarget{section-6}{%
-\chapter{각론}\label{section-6}}
+\hypertarget{uxac01uxb860}{%
+\chapter{각론}\label{uxac01uxb860}}
 
-\hypertarget{section-7}{%
-\section{예방치료시 고려 요인}\label{section-7}}
+\hypertarget{uxc608uxbc29uxce58uxb8ccuxc2dc-uxace0uxb824-uxc694uxc778}{%
+\section{예방치료시 고려 요인}\label{uxc608uxbc29uxce58uxb8ccuxc2dc-uxace0uxb824-uxc694uxc778}}
 
-\hypertarget{section-8}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료를 고려해야 하는 요인들(두통빈도, 두통강도, 환자의 선호도, 일상생활에 대한 영향 등)은 무엇인가?}\label{section-8}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb97c-uxace0uxb824uxd574uxc57c-uxd558uxb294-uxc694uxc778uxb4e4uxb450uxd1b5uxbe48uxb3c4-uxb450uxd1b5uxac15uxb3c4-uxd658uxc790uxc758-uxc120uxd638uxb3c4-uxc77cuxc0c1uxc0dduxd65cuxc5d0-uxb300uxd55c-uxc601uxd5a5-uxb4f1uxc740-uxbb34uxc5c7uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료를 고려해야 하는 요인들(두통빈도, 두통강도, 환자의 선호도, 일상생활에 대한 영향 등)은 무엇인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb97c-uxace0uxb824uxd574uxc57c-uxd558uxb294-uxc694uxc778uxb4e4uxb450uxd1b5uxbe48uxb3c4-uxb450uxd1b5uxac15uxb3c4-uxd658uxc790uxc758-uxc120uxd638uxb3c4-uxc77cuxc0c1uxc0dduxd65cuxc5d0-uxb300uxd55c-uxc601uxd5a5-uxb4f1uxc740-uxbb34uxc5c7uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료를 고려해야 하는 요인들(두통빈도, 두통강도, 환자의 선호도, 일상생활에 대한 영향 등)은 무엇인가?}
 
 편두통 예방치료의 궁극적인 목적은 편두통 환자의 두통으로 인한 장애를 감소시키는 것이다. 따라서 두통으로 인한 장애와 그와 연관된 요인들을 고려하여 편두통 예방치료의 시작을 결정하는 것이 필요하다. 중요한 연관 요인들로는 ①두통빈도, ②두통강도, 그리고 ③편두통 급성기치료의 효과를 들 수 있다. 부가적으로 ④환자의 개인적 선호도와 ⑤담당의사의 개별적인 판단도 편두통 예방치료의 결정에 포함시킬 수 있다.
@@ -462,13 +454,13 @@
   Scher AI, Stewart WF, Ricci JA, et al.~Factors associated with the onset and remission of chronic daily headache in a population-based study. Pain. 2003 Nov;106(1-2):81-9.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-9}{%
-\section{예방치료의 중단}\label{section-9}}
+\hypertarget{uxc608uxbc29uxce58uxb8ccuxc758-uxc911uxb2e8}{%
+\section{예방치료의 중단}\label{uxc608uxbc29uxce58uxb8ccuxc758-uxc911uxb2e8}}
 
-\hypertarget{section-10}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료의 중단은 어떻게 결정해야 하는가?}\label{section-10}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxc758-uxc911uxb2e8uxc740-uxc5b4uxb5bbuxac8c-uxacb0uxc815uxd574uxc57c-uxd558uxb294uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료의 중단은 어떻게 결정해야 하는가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxc758-uxc911uxb2e8uxc740-uxc5b4uxb5bbuxac8c-uxacb0uxc815uxd574uxc57c-uxd558uxb294uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료의 중단은 어떻게 결정해야 하는가?}
 
 삽화편두통에서 예방치료를 시작했을 때 심한 약물 부작용이 발생하면 치료 시작 후 수 일에서 수 주 이내에 약을 중단해야 한다. 그리고, 약물의 효능이 충분하지 않은 경우에도 약을 중단해야 한다. 예방치료의 효과가 약물 치료 시작 후 수 개월이 지나고 나타나는 경우도 있지만 대부분의 예방약물은 치료 시작 1개월 후에는 어느 정도의 효능이 나타난다. 만약 2개월간 약물 복용후에도 효능이 부족한 경우에는 사용중인 예방약물을 중단하고 다른 약물을 시도해 볼 수 있다. 또한, 예방치료 시행 후 편두통의 빈도나 두통일수가 50\%이상 감소하면 치료가 효과적이라고 판단을 하고 예방치료 중단을 고려할 수 있다. 그러나, 예방치료가 효과적일 때 치료 기간을 얼마나 지속해야 할지에 대해서는 근거가 부족하다. 성공적인 예방치료를 통해 약물 중단 후에도 편두통 발생 빈도를 감소한 채로 유지하고자 하더라도, 일부 환자에서는 예방치료 중단 후 증상이 재발할 수 있다. 일부 지침에서는 수 개월간 충분히 치료를 지속하고 반동성 두통을 예방하기 위해 서서히 용량을 줄여 중단하는 것을 권장한다고 언급하고 있지만, 성공적인 예방치료를 어느 정도의 기간동안 지속할 지에 대해서는 근거가 부족하다. 따라서, 예방치료 중단의 최종적인 결정은 환자가 경험한 이득과 부작용 정도에 따라 이루어지게 된다. 초기에는 예방치료 약물이 효능이 좋고 부작용이 없는 경우에도 시간이 지나면서 약물의 효능 정도가 감소하거나 부작용이 나타나서 약물을 중단해야 하는 경우도 있어서 환자를 추적 관찰하여 재평가를 하는 것이 필요하다.
@@ -495,13 +487,13 @@
   Pringsheim T, Davenport W, Mackie G, et al.~Canadian Headache Society guideline for migraine prophylaxis. Can J Neurol Sci. 2012 Mar;39(2 Suppl 2):S1-59.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-11}{%
-\section{베타차단제}\label{section-11}}
+\hypertarget{uxbca0uxd0c0uxcc28uxb2e8uxc81c}{%
+\section{베타차단제}\label{uxbca0uxd0c0uxcc28uxb2e8uxc81c}}
 
-\hypertarget{section-12}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료로 베타차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{section-12}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxbca0uxd0c0uxcc28uxb2e8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료로 베타차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxbca0uxd0c0uxcc28uxb2e8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료로 베타차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}
 
 삽화편두통 예방치료에서 베타차단제가 효과를 나타내는 기전은 아직 명확하게 밝혀지지 않았으나 중추베타수용체를 차단하여 노르에피네프린 분비를 억제하고 세로토닌 시스템을 조절하며 신경세포활성도를 낮춤으로써 신경막안정효과가 있는 것으로 추정하고 있다. 현재까지 편두통 예방효과에 대한 무작위대조연구 결과가 보고된 베타차단제로는 프로프라놀롤(prapronolol), 메토프롤롤(metoprolol), 아테놀롤(atenolol), 나돌롤(nadolol), 네비볼롤(nevibolol), 비소프롤롤(bisoprolol), 핀돌롤(pindolol), 티몰롤(timolol) 등이 있다.
@@ -569,13 +561,13 @@
   Stovner LJ, Linde M, Gravdahl GB, et al.~A comparative study of candesartan versus propranolol for migraine prophylaxis: A randomised, triple-blind, placebo-controlled, double cross-over study. Cephalalgia 2014;34:523-532.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-13}{%
-\section{칼슘통로차단제}\label{section-13}}
+\hypertarget{uxce7cuxc298uxd1b5uxb85cuxcc28uxb2e8uxc81c}{%
+\section{칼슘통로차단제}\label{uxce7cuxc298uxd1b5uxb85cuxcc28uxb2e8uxc81c}}
 
-\hypertarget{section-14}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료로 칼슘통로차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{section-14}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxce7cuxc298uxd1b5uxb85cuxcc28uxb2e8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료로 칼슘통로차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxce7cuxc298uxd1b5uxb85cuxcc28uxb2e8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료로 칼슘통로차단제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}
 
 삽화편두통 예방치료에서 칼슘통로차단제가 효과를 나타내는 기전은 명확하지 않다. 피질확산성억제 차단, 세로토닌 분비 차단, 신경혈관성 염증 억제등이 기전으로 추측되고 있다. 현재까지 무작위배정을 통해 근거를 제시한 칼슘통로차단제로는 니카르디핀(nicardipine), 니페디핀(nifedipine), 니모디핀(nimodipine), 베라파밀(verapamil) 등이 있다. 또한 칼슘통로차단제 계열이기는 하지만 혈압 및 심장박동에 큰 영향을 미치지 않는 플루나리진(flunarizine) 및 신나리진(cinnarizine) 등에서 삽화편두통 예방치료에 대한 근거가 제시된 바 있다.
@@ -632,13 +624,13 @@
   Togha M, Rahmat Jirde M, Nilavari K, et al.~Cinnarizine in refractory migraine prophylaxis: efficacy and tolerability. A comparison with sodium valproate. J Headache Pain. 2008 Apr;9(2):77-82.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-15}{%
-\section{안지오텐신수용체차단제 또는 안지오텐신전환효소억제제}\label{section-15}}
+\hypertarget{uxc548uxc9c0uxc624uxd150uxc2e0uxc218uxc6a9uxccb4uxcc28uxb2e8uxc81c-uxb610uxb294-uxc548uxc9c0uxc624uxd150uxc2e0uxc804uxd658uxd6a8uxc18cuxc5b5uxc81cuxc81c}{%
+\section{안지오텐신수용체차단제 또는 안지오텐신전환효소억제제}\label{uxc548uxc9c0uxc624uxd150uxc2e0uxc218uxc6a9uxccb4uxcc28uxb2e8uxc81c-uxb610uxb294-uxc548uxc9c0uxc624uxd150uxc2e0uxc804uxd658uxd6a8uxc18cuxc5b5uxc81cuxc81c}}
 
-\hypertarget{angiotensin-receptor-blocker-angiotensin-converting-enzyme-inhibitor------------}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료로 안지오텐신수용체차단제(angiotensin receptor blocker)나 안지오텐신전환효소억제제(angiotensin-converting enzyme inhibitor)를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{angiotensin-receptor-blocker-angiotensin-converting-enzyme-inhibitor------------}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxc548uxc9c0uxc624uxd150uxc2e0uxc218uxc6a9uxccb4uxcc28uxb2e8uxc81cangiotensin-receptor-blockeruxb098-uxc548uxc9c0uxc624uxd150uxc2e0uxc804uxd658uxd6a8uxc18cuxc5b5uxc81cuxc81cangiotensin-converting-enzyme-inhibitoruxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료로 안지오텐신수용체차단제(angiotensin receptor blocker)나 안지오텐신전환효소억제제(angiotensin-converting enzyme inhibitor)를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxc548uxc9c0uxc624uxd150uxc2e0uxc218uxc6a9uxccb4uxcc28uxb2e8uxc81cangiotensin-receptor-blockeruxb098-uxc548uxc9c0uxc624uxd150uxc2e0uxc804uxd658uxd6a8uxc18cuxc5b5uxc81cuxc81cangiotensin-converting-enzyme-inhibitoruxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료로 안지오텐신수용체차단제(angiotensin receptor blocker)나 안지오텐신전환효소억제제(angiotensin-converting enzyme inhibitor)를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}
 
 안지오텐신수용체차단제 및 안지오텐신전환효소억제제가 편두통 예방치료에 작용하는 기전은 잘 알려져 있지 않다. 고빈도편두통을 가진 한 환자가 안지오텐신전환효소억제제인 에날라프릴(enalapril)을 고혈압 치료를 위해 복용하면서부터 두통이 없어졌다는 보고를 한 뒤로, 이 계통의 약물에 대한 임상연구가 이루어져왔다. 알려진 바는 없으나 아마도 안지오텐신이 갖는 혈관수축 및 교감신경항진에 대한 길항효과로 인한 것으로 추정되고 있다. 현재까지 편두통예방효과에 대한 무작위대조연구결과가 보고된 안지오텐신수용체차단제 및 안지오텐신전환효소억제제로는 칸데사르탄(candesartan), 리시노프릴(lisinopril), 텔미사르탄(telmisartan)이 있다.
@@ -682,13 +674,13 @@
   Diener HC, Gendolla A, Feuersenger A, et al.~Telmisartan in migraine prophylaxis: a randomized, placebo-controlled trial. Cephalalgia 2009;29:921-927.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-16}{%
-\section{항우울제}\label{section-16}}
+\hypertarget{uxd56duxc6b0uxc6b8uxc81c}{%
+\section{항우울제}\label{uxd56duxc6b0uxc6b8uxc81c}}
 
-\hypertarget{section-17}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료로 항우울제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{section-17}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxd56duxc6b0uxc6b8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료로 항우울제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxd56duxc6b0uxc6b8uxc81cuxb97c-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료로 항우울제를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}
 
 편두통의 병리기전은 아직까지 명확하게 밝혀져 있지 않지만 신경전달물질인 세로토닌과 세로토닌수용체가 편두통의 통증발생에서 중요한 역할을 하는 것으로 알려져 있다. 그렇기 때문에 항우울제는 오랫동안 편두통 예방치료제로 많이 처방되어 왔다. 1960년대부터 삼환계항우울제가 두통의 예방치료제로 처방되기 시작했으며 그후 선택적세로토닌재흡수억제제 (selective serotonin reuptake inhibitor) 와 세로토닌노르에피네프린재흡수억제제 (serotonin norepinephrine reuptake inhibitor)도 편두통 예방치료제로 임상에서 쓰이기 시작했다. 항우울제의 편두통 예방기전은 정확히 알려져 있지 않으며 시냅스에서의 세로토닌 및 기타 신경전달물질의 농도를 증가시키는 것 외에도 다양한 기전이 작용하는 것으로 알려져 있다. 현재까지 편두통 예방효과에 대한 무작위대조연구결과가 보고된 항우울제로는 아미트리프틸린(amitriptyline), 노르트리프틸린(nortriptyline), 플루옥세틴(fluoxetine), 벤라팍신(venlafaxine) 등이 있다.
@@ -752,13 +744,13 @@
   Domingues RB, Silva AL, Domingues SA, et al.~A double-blind randomized controlled trial of low doses of propranolol, nortriptyline, and the combination of propranolol and nortriptyline for the preventive treatment of migraine. Arq NeuroPsiquiatr 2009; 67(4):973-7.
 \end{enumerate}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\hypertarget{section-18}{%
-\section{뇌전증치료제}\label{section-18}}
+\hypertarget{uxb1ccuxc804uxc99duxce58uxb8ccuxc81c}{%
+\section{뇌전증치료제}\label{uxb1ccuxc804uxc99duxce58uxb8ccuxc81c}}
 
-\hypertarget{section-19}{%
-\subsubsection*{성인 삽화편두통 환자에서 예방치료로 뇌전증약을 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{section-19}}
+\hypertarget{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxb1ccuxc804uxc99duxc57duxc744-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}{%
+\subsubsection*{성인 삽화편두통 환자에서 예방치료로 뇌전증약을 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}\label{uxc131uxc778-uxc0bduxd654uxd3b8uxb450uxd1b5-uxd658uxc790uxc5d0uxc11c-uxc608uxbc29uxce58uxb8ccuxb85c-uxb1ccuxc804uxc99duxc57duxc744-uxc0acuxc6a9uxd558uxb294-uxac83uxc774-uxd0c0uxc57duxc81c-uxc704uxc57d-uxb610uxb294-uxce58uxb8ccuxd558uxc9c0-uxc54auxb294-uxac83uxc5d0-uxbe44uxd574-uxb450uxd1b5uxc758-uxc644uxd654uxc5d0-uxd6a8uxacfcuxc801uxc778uxac00}}
 \addcontentsline{toc}{subsubsection}{성인 삽화편두통 환자에서 예방치료로 뇌전증약을 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?}
 
 삽화편두통 예방치료에서 뇌전증약이 효과를 나타내는 기전은 명확하지 않지만 한 개 이상의 다양한 기전으로 두통을 조절하는 것으로 추측하고 있다. 뇌전증약은 약물에 따라 GABA (gamma-aminobutyric acid)와 관련된 신호 억제를 항진시키고 글루타메이트와 연관된 신경전달을 억제하는 것으로 알려져 있다. 글루타메이트와 연관된 신경전달 억제는 각 뇌전증약 별로 특이적인 경로를 통해 억제한다. 현재까지 편두통 예방효과에 대한 무작위대조연구결과가 보고된 뇌전증약으로는 토피라메이트(topiramate), 발프로산(valproic acid, divalproex sodium), 가바펜틴(gabapentin), 레베티라세탐(levetiracetam), 조니사미드(zonisamide) 등이 있다.
@@ -860,8 +852,8 @@
 \appendix}
 
 
-\hypertarget{section-20}{%
-\chapter{두통 일기}\label{section-20}}
+\hypertarget{uxb450uxd1b5-uxc77cuxae30}{%
+\chapter{두통 일기}\label{uxb450uxd1b5-uxc77cuxae30}}
 
 두통일기는 임상의사가 환자의 치료반응을 평가하는데 있어서 매우 유용하며, 환자가 스스로 본인의 두통 패턴을 파악하고 유발인자를 회피하도록 돕는 교육적 효과도 있다. 따라서 예방치료를 고려하는 환자에게는 필수적이며, 가능하다면 모든 편두통환자에게 적용하는 것이 좋다.
 
@@ -890,13 +882,13 @@
 \caption{두통일기의 예시}
 \end{figure}
 
-\hypertarget{section-21}{%
-\chapter{삽화편두통 예방약물의 용량, 부작용 및 금기사항}\label{section-21}}
+\hypertarget{uxc0bduxd654uxd3b8uxb450uxd1b5-uxc608uxbc29uxc57duxbb3cuxc758-uxc6a9uxb7c9-uxbd80uxc791uxc6a9-uxbc0f-uxae08uxae30uxc0acuxd56d}{%
+\chapter{삽화편두통 예방약물의 용량, 부작용 및 금기사항}\label{uxc0bduxd654uxd3b8uxb450uxd1b5-uxc608uxbc29uxc57duxbb3cuxc758-uxc6a9uxb7c9-uxbd80uxc791uxc6a9-uxbc0f-uxae08uxae30uxc0acuxd56d}}
 
-\hypertarget{section-22}{%
-\section{일반적인 용량 및 흔한 부작용}\label{section-22}}
+\hypertarget{uxc77cuxbc18uxc801uxc778-uxc6a9uxb7c9-uxbc0f-uxd754uxd55c-uxbd80uxc791uxc6a9}{%
+\section{일반적인 용량 및 흔한 부작용}\label{uxc77cuxbc18uxc801uxc778-uxc6a9uxb7c9-uxbc0f-uxd754uxd55c-uxbd80uxc791uxc6a9}}
 
-\begin{longtable}{lllllllll}
+\begin{longtable}{lll}
 \toprule
 약물 & 용량범위\_1일 & 부작용\\
 \midrule
@@ -940,10 +932,10 @@ ACEI or ARB &  & \\
 \bottomrule
 \end{longtable}
 
-\hypertarget{section-23}{%
-\section{금기사항}\label{section-23}}
+\hypertarget{uxae08uxae30uxc0acuxd56d}{%
+\section{금기사항}\label{uxae08uxae30uxc0acuxd56d}}
 
-\begin{longtable}{llllll}
+\begin{longtable}{ll}
 \toprule
 약물 & 금기사항\\
 \midrule
@@ -987,15 +979,15 @@ ACEI or ARB & \\
 \bottomrule
 \end{longtable}
 
-\hypertarget{section-24}{%
-\chapter{편두통 진단기준}\label{section-24}}
+\hypertarget{uxd3b8uxb450uxd1b5-uxc9c4uxb2e8uxae30uxc900}{%
+\chapter{편두통 진단기준}\label{uxd3b8uxb450uxd1b5-uxc9c4uxb2e8uxae30uxc900}}
 
 \hypertarget{korean-version-of-the-international-classification-of-headache-disorders-3rd-edition}{%
 \subsection*{Korean Version of The International Classification of Headache Disorders, 3rd Edition}\label{korean-version-of-the-international-classification-of-headache-disorders-3rd-edition}}
 \addcontentsline{toc}{subsection}{Korean Version of The International Classification of Headache Disorders, 3rd Edition}
 
-\hypertarget{section-25}{%
-\section*{무조짐 편두통}\label{section-25}}
+\hypertarget{uxbb34uxc870uxc9d0-uxd3b8uxb450uxd1b5}{%
+\section*{무조짐 편두통}\label{uxbb34uxc870uxc9d0-uxd3b8uxb450uxd1b5}}
 \addcontentsline{toc}{section}{무조짐 편두통}
 
 A. 진단기준 B-D를 충족하는 발작이 최소한 5번
@@ -1030,8 +1022,8 @@ D. 두통이 있는 동안 다음 중 최소한 한 가지:
 
 E. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
 
-\hypertarget{section-26}{%
-\section*{조짐 편두통}\label{section-26}}
+\hypertarget{uxc870uxc9d0-uxd3b8uxb450uxd1b5}{%
+\section*{조짐 편두통}\label{uxc870uxc9d0-uxd3b8uxb450uxd1b5}}
 \addcontentsline{toc}{section}{조짐 편두통}
 
 A. 진단기준 B와 C를 충족하며 최소한 2번 발생하는 발작
@@ -1076,17 +1068,17 @@ C. 다음 여섯 가지 특성 중 최소한 세 가지:
 
 D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
 
-\hypertarget{section-27}{%
-\chapter{지침 개발 과정}\label{section-27}}
+\hypertarget{uxc9c0uxce68-uxac1cuxbc1c-uxacfcuxc815}{%
+\chapter{지침 개발 과정}\label{uxc9c0uxce68-uxac1cuxbc1c-uxacfcuxc815}}
 
-\hypertarget{section-28}{%
-\section{이해당사자의 참여}\label{section-28}}
+\hypertarget{uxc774uxd574uxb2f9uxc0acuxc790uxc758-uxcc38uxc5ec}{%
+\section{이해당사자의 참여}\label{uxc774uxd574uxb2f9uxc0acuxc790uxc758-uxcc38uxc5ec}}
 
-\hypertarget{section-29}{%
-\subsection{지침 제정 참여자 및 역할}\label{section-29}}
+\hypertarget{uxc9c0uxce68-uxc81cuxc815-uxcc38uxc5ecuxc790-uxbc0f-uxc5eduxd560}{%
+\subsection{지침 제정 참여자 및 역할}\label{uxc9c0uxce68-uxc81cuxc815-uxcc38uxc5ecuxc790-uxbc0f-uxc5eduxd560}}
 
-\hypertarget{section-30}{%
-\subsubsection*{운영위원회}\label{section-30}}
+\hypertarget{uxc6b4uxc601uxc704uxc6d0uxd68c}{%
+\subsubsection*{운영위원회}\label{uxc6b4uxc601uxc704uxc6d0uxd68c}}
 \addcontentsline{toc}{subsubsection}{운영위원회}
 
 \begin{itemize}
@@ -1110,8 +1102,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-31}{%
-\subsubsection*{자문위원회}\label{section-31}}
+\hypertarget{uxc790uxbb38uxc704uxc6d0uxd68c}{%
+\subsubsection*{자문위원회}\label{uxc790uxbb38uxc704uxc6d0uxd68c}}
 \addcontentsline{toc}{subsubsection}{자문위원회}
 
 \begin{itemize}
@@ -1129,8 +1121,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-32}{%
-\subsubsection*{외부자문그룹}\label{section-32}}
+\hypertarget{uxc678uxbd80uxc790uxbb38uxadf8uxb8f9}{%
+\subsubsection*{외부자문그룹}\label{uxc678uxbd80uxc790uxbb38uxadf8uxb8f9}}
 \addcontentsline{toc}{subsubsection}{외부자문그룹}
 
 \begin{itemize}
@@ -1148,8 +1140,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-33}{%
-\subsubsection*{실무위원회및 근거평가그룹}\label{section-33}}
+\hypertarget{uxc2e4uxbb34uxc704uxc6d0uxd68cuxbc0f-uxadfcuxac70uxd3c9uxac00uxadf8uxb8f9}{%
+\subsubsection*{실무위원회및 근거평가그룹}\label{uxc2e4uxbb34uxc704uxc6d0uxd68cuxbc0f-uxadfcuxac70uxd3c9uxac00uxadf8uxb8f9}}
 \addcontentsline{toc}{subsubsection}{실무위원회및 근거평가그룹}
 
 \begin{itemize}
@@ -1172,16 +1164,16 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   전주예수병원 최윤주
 \end{itemize}
 
-\hypertarget{section-34}{%
-\subsection{이해관계 선언}\label{section-34}}
+\hypertarget{uxc774uxd574uxad00uxacc4-uxc120uxc5b8}{%
+\subsection{이해관계 선언}\label{uxc774uxd574uxad00uxacc4-uxc120uxc5b8}}
 
 운영위원회 및 실무위원회의 모든 위원은 자문료, 연구비, 지적재산권등의 재정적 이해상충, 지적이해상충, 그리고 개인적 이해상충을 문서로 공개하였다.
 
-\hypertarget{section-35}{%
-\subsection{운영}\label{section-35}}
+\hypertarget{uxc6b4uxc601}{%
+\subsection{운영}\label{uxc6b4uxc601}}
 
-\hypertarget{section-36}{%
-\subsubsection*{합의원칙의 결정}\label{section-36}}
+\hypertarget{uxd569uxc758uxc6d0uxce59uxc758-uxacb0uxc815}{%
+\subsubsection*{합의원칙의 결정}\label{uxd569uxc758uxc6d0uxce59uxc758-uxacb0uxc815}}
 \addcontentsline{toc}{subsubsection}{합의원칙의 결정}
 
 \begin{itemize}
@@ -1192,8 +1184,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   델파이 방식을 통한 합의
 \end{itemize}
 
-\hypertarget{section-37}{%
-\subsubsection*{저자원칙의 결정}\label{section-37}}
+\hypertarget{uxc800uxc790uxc6d0uxce59uxc758-uxacb0uxc815}{%
+\subsubsection*{저자원칙의 결정}\label{uxc800uxc790uxc6d0uxce59uxc758-uxacb0uxc815}}
 \addcontentsline{toc}{subsubsection}{저자원칙의 결정}
 
 \begin{itemize}
@@ -1204,8 +1196,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   저자포함: 개발그룹전체
 \end{itemize}
 
-\hypertarget{section-38}{%
-\section{지침이 다루는 인구 집단}\label{section-38}}
+\hypertarget{uxc9c0uxce68uxc774-uxb2e4uxb8e8uxb294-uxc778uxad6c-uxc9d1uxb2e8}{%
+\section{지침이 다루는 인구 집단}\label{uxc9c0uxce68uxc774-uxb2e4uxb8e8uxb294-uxc778uxad6c-uxc9d1uxb2e8}}
 
 \begin{itemize}
 \tightlist
@@ -1217,26 +1209,26 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   만성편두통 환자 제외
 \end{itemize}
 
-\hypertarget{section-39}{%
-\section{지침 사용 대상자}\label{section-39}}
+\hypertarget{uxc9c0uxce68-uxc0acuxc6a9-uxb300uxc0c1uxc790}{%
+\section{지침 사용 대상자}\label{uxc9c0uxce68-uxc0acuxc6a9-uxb300uxc0c1uxc790}}
 
 국내에서 편두통 환자를 진료하는 모든 임상의사
 
-\hypertarget{section-40}{%
-\section{지침의 범위와 목적}\label{section-40}}
+\hypertarget{uxc9c0uxce68uxc758-uxbc94uxc704uxc640-uxbaa9uxc801}{%
+\section{지침의 범위와 목적}\label{uxc9c0uxce68uxc758-uxbc94uxc704uxc640-uxbaa9uxc801}}
 
 임상의사가 편두통 환자를 진료할 때 표준화된 삽화편두통 환자의 예방약물 사용을 제시한다.
 
-\hypertarget{section-41}{%
-\section{지침의 목적}\label{section-41}}
+\hypertarget{uxc9c0uxce68uxc758-uxbaa9uxc801}{%
+\section{지침의 목적}\label{uxc9c0uxce68uxc758-uxbaa9uxc801}}
 
 본 지침은 국내 임상 상황에서 성인 편두통 환자들을 진료하는 모든 임상의들에게 삽화편두통의 예방약물에 대한 표준화된 지침을 제시함으로써, 이에 대한 정확한 이해 및 효율적인 치료를 증진시킬 목적으로 개발되었다.
 
-\hypertarget{section-42}{%
-\section{외부 검토}\label{section-42}}
+\hypertarget{uxc678uxbd80-uxac80uxd1a0}{%
+\section{외부 검토}\label{uxc678uxbd80-uxac80uxd1a0}}
 
-\hypertarget{section-43}{%
-\subsection*{잠재적 승인기구}\label{section-43}}
+\hypertarget{uxc7a0uxc7acuxc801-uxc2b9uxc778uxae30uxad6c}{%
+\subsection*{잠재적 승인기구}\label{uxc7a0uxc7acuxc801-uxc2b9uxc778uxae30uxad6c}}
 \addcontentsline{toc}{subsection}{잠재적 승인기구}
 
 \begin{itemize}
@@ -1247,8 +1239,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   대한신경과학회
 \end{itemize}
 
-\hypertarget{section-44}{%
-\section{보급전략}\label{section-44}}
+\hypertarget{uxbcf4uxae09uxc804uxb7b5}{%
+\section{보급전략}\label{uxbcf4uxae09uxc804uxb7b5}}
 
 \begin{itemize}
 \tightlist
@@ -1274,21 +1266,21 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-45}{%
-\section{갱신절차}\label{section-45}}
+\hypertarget{uxac31uxc2e0uxc808uxcc28}{%
+\section{갱신절차}\label{uxac31uxc2e0uxc808uxcc28}}
 
 매년 초 편두통 예방약물 진료지침 개정위원회를 개최하고, 새로운 근거를 검토하여 갱신의 필요성과 여부를 결정할 예정
 
-\hypertarget{section-46}{%
-\section{편집의 독립성과 재정}\label{section-46}}
+\hypertarget{uxd3b8uxc9d1uxc758-uxb3c5uxb9bduxc131uxacfc-uxc7acuxc815}{%
+\section{편집의 독립성과 재정}\label{uxd3b8uxc9d1uxc758-uxb3c5uxb9bduxc131uxacfc-uxc7acuxc815}}
 
 대한두통학회 편두통진료지침위원 구성원들간에 이해상충이나 잠재적인 이해관계는 없었다. 또한, 대한신경과학회와 대한두통학회외의 기관이나 단체로부터 재정 지원을 받지 않았다.
 
-\hypertarget{section-47}{%
-\chapter{범위결정과 핵심질문}\label{section-47}}
+\hypertarget{uxbc94uxc704uxacb0uxc815uxacfc-uxd575uxc2ecuxc9c8uxbb38}{%
+\chapter{범위결정과 핵심질문}\label{uxbc94uxc704uxacb0uxc815uxacfc-uxd575uxc2ecuxc9c8uxbb38}}
 
-\hypertarget{section-48}{%
-\section{범위결정}\label{section-48}}
+\hypertarget{uxbc94uxc704uxacb0uxc815}{%
+\section{범위결정}\label{uxbc94uxc704uxacb0uxc815}}
 
 \begin{itemize}
 \item
@@ -1319,11 +1311,11 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   Healthcare setting: Primary care setting in Korea
 \end{itemize}
 
-\hypertarget{section-49}{%
-\section{핵심질문}\label{section-49}}
+\hypertarget{uxd575uxc2ecuxc9c8uxbb38}{%
+\section{핵심질문}\label{uxd575uxc2ecuxc9c8uxbb38}}
 
-\hypertarget{section-50}{%
-\subsection{선정과정}\label{section-50}}
+\hypertarget{uxc120uxc815uxacfcuxc815}{%
+\subsection{선정과정}\label{uxc120uxc815uxacfcuxc815}}
 
 \begin{itemize}
 \item
@@ -1356,8 +1348,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-51}{%
-\subsection{최종 선정된 핵심질문}\label{section-51}}
+\hypertarget{uxcd5cuxc885-uxc120uxc815uxb41c-uxd575uxc2ecuxc9c8uxbb38}{%
+\subsection{최종 선정된 핵심질문}\label{uxcd5cuxc885-uxc120uxc815uxb41c-uxd575uxc2ecuxc9c8uxbb38}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1377,11 +1369,11 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   Episodic migraine환자에서 예방치료로 항경련제(anti-epileptic agent: divalproex sodium, sodium valproate, topiramate 등)를 사용하는 것이 타약제, 위약 또는 치료하지 않는 것에 비해 두통의 완화에 효과적인가?
 \end{enumerate}
 
-\hypertarget{section-52}{%
-\chapter{개발의 엄격성}\label{section-52}}
+\hypertarget{uxac1cuxbc1cuxc758-uxc5c4uxaca9uxc131}{%
+\chapter{개발의 엄격성}\label{uxac1cuxbc1cuxc758-uxc5c4uxaca9uxc131}}
 
-\hypertarget{section-53}{%
-\section{개발방법}\label{section-53}}
+\hypertarget{uxac1cuxbc1cuxbc29uxbc95}{%
+\section{개발방법}\label{uxac1cuxbc1cuxbc29uxbc95}}
 
 \begin{itemize}
 \tightlist
@@ -1397,8 +1389,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-54}{%
-\section{지침및 근거검색}\label{section-54}}
+\hypertarget{uxc9c0uxce68uxbc0f-uxadfcuxac70uxac80uxc0c9}{%
+\section{지침및 근거검색}\label{uxc9c0uxce68uxbc0f-uxadfcuxac70uxac80uxc0c9}}
 
 \includegraphics{static/SearchProcess.png}
 
@@ -1460,8 +1452,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-55}{%
-\section{검색된 진료지침및 연구결과 선별}\label{section-55}}
+\hypertarget{uxac80uxc0c9uxb41c-uxc9c4uxb8ccuxc9c0uxce68uxbc0f-uxc5f0uxad6cuxacb0uxacfc-uxc120uxbcc4}{%
+\section{검색된 진료지침및 연구결과 선별}\label{uxac80uxc0c9uxb41c-uxc9c4uxb8ccuxc9c0uxce68uxbc0f-uxc5f0uxad6cuxacb0uxacfc-uxc120uxbcc4}}
 
 \begin{itemize}
 \tightlist
@@ -1483,8 +1475,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-56}{%
-\section{검색된 진료지침및 연구결과 평가}\label{section-56}}
+\hypertarget{uxac80uxc0c9uxb41c-uxc9c4uxb8ccuxc9c0uxce68uxbc0f-uxc5f0uxad6cuxacb0uxacfc-uxd3c9uxac00}{%
+\section{검색된 진료지침및 연구결과 평가}\label{uxac80uxc0c9uxb41c-uxc9c4uxb8ccuxc9c0uxce68uxbc0f-uxc5f0uxad6cuxacb0uxacfc-uxd3c9uxac00}}
 
 \begin{itemize}
 \tightlist
@@ -1494,15 +1486,15 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   진료지침만으로 핵심질문을 답하는데 충분하지 않으면 체계적 문헌고찰, 무작위비교임상시험, 관찰연구등 순으로 추가 자료에 대해 질평가를 시행하고 근거표를 작성하였음.
 \end{itemize}
 
-\hypertarget{section-57}{%
-\section{권고문 합의및 권고등급 결정}\label{section-57}}
+\hypertarget{uxad8cuxace0uxbb38-uxd569uxc758uxbc0f-uxad8cuxace0uxb4f1uxae09-uxacb0uxc815}{%
+\section{권고문 합의및 권고등급 결정}\label{uxad8cuxace0uxbb38-uxd569uxc758uxbc0f-uxad8cuxace0uxb4f1uxae09-uxacb0uxc815}}
 
-\hypertarget{grade--}{%
-\subsection*{근거수준과 권고등급의 평가: GRADE 방식 사용}\label{grade--}}
+\hypertarget{uxadfcuxac70uxc218uxc900uxacfc-uxad8cuxace0uxb4f1uxae09uxc758-uxd3c9uxac00-grade-uxbc29uxc2dd-uxc0acuxc6a9}{%
+\subsection*{근거수준과 권고등급의 평가: GRADE 방식 사용}\label{uxadfcuxac70uxc218uxc900uxacfc-uxad8cuxace0uxb4f1uxae09uxc758-uxd3c9uxac00-grade-uxbc29uxc2dd-uxc0acuxc6a9}}
 \addcontentsline{toc}{subsection}{근거수준과 권고등급의 평가: GRADE 방식 사용}
 
-\hypertarget{section-58}{%
-\subsubsection*{근거수준}\label{section-58}}
+\hypertarget{uxadfcuxac70uxc218uxc900}{%
+\subsubsection*{근거수준}\label{uxadfcuxac70uxc218uxc900}}
 \addcontentsline{toc}{subsubsection}{근거수준}
 
 근거수준(level of evidence)는 현재까지의 근거를 바탕으로 특정 중재의 효과에 대해 확신하는 정도를 말한다.
@@ -1523,8 +1515,8 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \textbf{전문가 의견}: 기존 근거가 별로 없으나 본 위원회 전문가의 공식적 합의 절차를 거쳐 현재 수준에서 임상적 적용을 하기에 적절함.
 \end{itemize}
 
-\hypertarget{section-59}{%
-\subsubsection*{권고등급}\label{section-59}}
+\hypertarget{uxad8cuxace0uxb4f1uxae09}{%
+\subsubsection*{권고등급}\label{uxad8cuxace0uxb4f1uxae09}}
 \addcontentsline{toc}{subsubsection}{권고등급}
 
 권고등급(strength of recommendation)ʼ이란
@@ -1560,7 +1552,6 @@ D. 다른 ICHD-3 진단으로 더 잘 설명되지 않음.
   \textbf{Strong against}: 강하게 권고하지 않음, ``사용하지 않을 것을 권고한다.''
 \end{itemize}
 
-\bibliography{book.bib,packages.bib}
-
+  \bibliography{book.bib,packages.bib}
 
 \end{document}
