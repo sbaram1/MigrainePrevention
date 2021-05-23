@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1574725737704.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2827363329",
+    "id" : "37712B72",
+    "lastKnownWriteTime" : 1561784834,
+    "last_content_update" : 1561784834,
+    "path" : "~/Dropbox/bookdown/MigrainePrevention/01-Summary.Rmd",
+    "project_path" : "01-Summary.Rmd",
+    "properties" : {
+        "cursorPosition" : "60,107",
+        "marks" : "<:110,24\n>:110,24",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
