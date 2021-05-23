@@ -24,7 +24,7 @@ library(tidyverse)
 
 <!-- # 머리말 {-} -->
 
-# Under Revision 20210523
+# Under Revision 20210523 {-}
 
 # 발간사 {-}
 

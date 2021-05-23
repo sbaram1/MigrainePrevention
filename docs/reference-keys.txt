@@ -46,3 +46,10 @@ output-bookdowngitbook
 검색된-진료지침및-연구결과-평가
 권고문-합의및-권고등급-결정
 under-revision-20210523
+지침-개발-과정-revised-20210523
+요약-under-revision
+개요-under-revision
+appendix-appendix---under-revision
+각론-under-revision
+삽화편두통-예방약물의-용량-부작용-및-금기사항-under-revision
+편두통-진단기준-under-revision

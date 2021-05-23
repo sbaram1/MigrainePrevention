@@ -1,6 +1,6 @@
 \cleardoublepage
 
-# (APPENDIX) Appendix {-} <span style="color:blue;"> (Under Revision) </span>
+# (APPENDIX) Appendix {-}
 
 # 두통 일기
 

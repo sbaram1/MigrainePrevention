@@ -1,6 +1,6 @@
 \mainmatter
 
-# 요약 <span style="color:blue;"> (Under Revision) </span>
+# 요약
 
 ## 핵심질문과 권고사항 
 
