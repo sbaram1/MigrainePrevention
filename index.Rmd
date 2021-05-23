@@ -24,9 +24,7 @@ library(tidyverse)
 
 <!-- # 머리말 {-} -->
 
-# Under Revision 20210523 {-}
-
-# 발간사 {-}
+# 발간사 <span style="color:blue;"> (Under Revision) </span> {-}
 
 **삽화편두통 예방치료약물”에 대한 임상진료지침 발간을 축하하며**
 
@@ -41,7 +39,7 @@ library(tidyverse)
 <div style="text-align: right"> **대한두통학회 회장 김병건** </div>
 
 
-# 간행사 {-}
+# 간행사 <span style="color:blue;"> (Under Revision) </span> {-}
 
 대한두통학회 창립 20주년을 맞이하여 삽화편두통 예방치료약물 진료지침이 발간됩니다.
 
